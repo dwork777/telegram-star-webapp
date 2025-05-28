@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telegram Star WebApp</title>
+</head>
+<body>
+  <h1>スターを使って画像をロック解除</h1>
+  <img id="lockImage" src="locked.jpg" alt="Locked" width="300">
+  <button onclick="unlockImage()">スターで解除</button>
+
+  <script>
+    function unlockImage() {
+      document.getElementById("lockImage").src = "unlocked.jpg";
+    }
+  </script>
+</body>
+</html>
