@@ -7,6 +7,16 @@
   <title>Telegram Star WebApp</title>
 </head>
 <body>
+  <!-- Telegram ログインウィジェット -->
+<script async src="https://telegram.org/js/telegram-widget.js?7"
+        data-telegram-login="dwork777bot"
+        data-size="large"
+        data-userpic="false"
+        data-request-access="write"
+        data-auth-url="https://telegram-star-webapp-5vit-egw6bte3z-dwork777s-projects.vercel.app/auth"
+        data-lang="ja">
+</script>
+
   <h1>スターを使って画像をロック解除</h1>
   <img id="lockImage" src="locked.jpg" alt="Locked" width="300">
   <button onclick="unlockImage()">スターで解除</button>
