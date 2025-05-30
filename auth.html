@@ -9,7 +9,6 @@
   <p id="userInfo">ユーザー情報を取得中...</p>
 
   <script>
-    // URLパラメータをオブジェクトに変換
     function getQueryParams() {
       const params = new URLSearchParams(window.location.search);
       const entries = {};
@@ -21,17 +20,11 @@
 
     const params = getQueryParams();
 
-    // 表示する
+    // localStorage に保存
+    localStorage.setItem('tg_user', JSON.stringify(params));
+
     document.getElementById('userInfo').innerText =
       `ID: ${params.id}\n名前: ${params.first_name}\nユーザー名: @${params.username}`;
-
-    // localStorageに保存（index.htmlで使う）
-    localStorage.setItem("tgUser", JSON.stringify(params));
-
-    // 3秒後に index.html に戻る
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 3000);
   </script>
 </body>
 </html>
