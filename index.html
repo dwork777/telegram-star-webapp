@@ -17,21 +17,15 @@
   </script>
 
   <h1>スターを使って画像をロック解除</h1>
-  <img id="lockImage" src="locked.jpg" alt="Locked" width="300" style="display: none;">
-  <button id="unlockBtn" onclick="unlockImage()" style="display: none;">スターで解除</button>
+  <p id="user-info"></p>
+  <img id="lockImage" src="locked.jpg" alt="Locked" width="300">
+  <button id="unlock-btn" style="display:none;" onclick="unlockImage()">スターで解除</button>
 
   <script>
-    // ユーザー情報があるかチェックしてUI切り替え
-    const user = JSON.parse(localStorage.getItem("tgUser") || "null");
-
-    if (user) {
-      // ログイン済み → 表示
-      document.getElementById("lockImage").style.display = "block";
-      document.getElementById("unlockBtn").style.display = "inline-block";
-    } else {
-      // 未ログイン → 非表示
-      document.getElementById("lockImage").style.display = "none";
-      document.getElementById("unlockBtn").style.display = "none";
+    const tgUser = JSON.parse(localStorage.getItem('tg_user'));
+    if (tgUser) {
+      document.getElementById("user-info").innerText = `ようこそ、${tgUser.first_name} さん`;
+      document.getElementById("unlock-btn").style.display = "inline-block";
     }
 
     function unlockImage() {
